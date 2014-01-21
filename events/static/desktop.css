@@ -1,0 +1,56 @@
+/* extra styles just for larger screens */
+
+#header h1 a {
+    float: left;
+}
+
+#header p {
+    display: block;
+    font-style: italic;
+    float: left;
+    margin: 39px 0 0 30px;
+}
+
+a.stooge {
+    position: absolute;
+    right: 0;
+    top: 6px;
+}
+
+#header ul {
+    clear: left;
+}
+
+#header ul li {
+    width: auto;
+}
+
+#tumescence .metadata h3 {
+    font-size: 36px;
+    line-height: 48px;
+}
+
+#tumescence .metadata p {
+   display: block;
+   margin-bottom: 0;
+}
+
+.people .person {
+    float: left;
+    width: 50%;
+}
+
+.programme {
+    width: 50%;
+    float: left;
+}
+
+.past-events {
+    width: 50%;
+    float: right;
+}
+
+.programme,
+.past-events {
+    margin-bottom: 36px;
+}

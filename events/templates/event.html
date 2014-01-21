@@ -1,0 +1,36 @@
+{% include "header.html" %}
+
+<div id="main" class="h-event">
+
+<h2 class="p-name">{{ event.name }}</h2>
+
+{% if event.when %}
+<p>
+	On <time class="dt-start" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}</time>
+{% if event.location %}
+	in
+	<span class="p-location">
+		{{ event.location }}
+		<data class="p-longitude" value="{{ event.location.position.longitude }}"></data>
+		<data class="p-latitude" value="{{ event.location.position.latitude }}"></data>
+	</span>
+{% endif %}
+</p>
+{% if event.location %}<div id="map"></div>{% endif %}
+{% endif %}
+
+{{ event.blurb | linebreaks }}
+
+{% if event.speakers %}
+
+	{{ event.speakers }}
+
+{% endif %}
+
+{% if event.eventbrite_event_id %}
+<iframe src="http://www.eventbrite.com/tickets-external?eid={{ event.eventbrite_event_id }}&amp;ref=etckt&amp;v=2" height="256" width="100%" frameborder="0" marginwidth="5" marginheight="5" scrolling="auto"></iframe>
+{% endif %}
+
+</div>
+
+{% include "footer.html" %}

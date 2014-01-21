@@ -1,0 +1,350 @@
+/* base styles for small screens and upwards */
+
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic);
+
+body {
+    font-family: "Libre Baskerville", Baskerville, Georgia, serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #333;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+a {
+   color: black;
+   text-decoration: underline;
+   border: 0;
+}
+
+a img {
+   border: 0;
+}
+
+li {
+    margin: .5em auto;
+}
+
+#header  {
+    position: relative;
+    overflow: hidden;
+}
+
+#header a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    padding: 18px 20px;
+}
+
+#header h1 {
+    text-transform: lowercase;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: normal;
+    margin: 0;
+    font-weight: normal;
+}
+
+#header h1 a {
+    width: auto;
+    padding-top: 36px;
+    padding-right: 56px;
+    background-image: url('yorkunionlogo-48-33.png');
+    background-size: 48px 33px;
+    background-repeat: no-repeat;
+    background-position: right 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    #header h1 a {
+        background-image: url('yorkunionlogo-96-66.png');
+    }
+}
+
+#header p {
+    display: none;
+}
+
+#header h1 b {
+    font-style: normal;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#header h1 i {
+    font-style: italic;
+}
+
+/* kpmg decal */
+
+#header a.stooge {
+    font-style: italic;
+}
+
+@media screen and (min-width : 600px) {
+    a.stooge {
+        position: absolute;
+        right: 0;
+        top: 6px;
+    }
+}
+
+#header a.stooge strong {
+    font-weight: normal;
+    display: inline-block;
+    width: 84px;
+    height: 33px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-size: 100%;
+    background-image: url('kpmg-84-33.png');
+    background-size: 84px 33px;
+    background-repeat: no-repeat;
+    vertical-align: bottom;
+    margin-bottom: 6px;
+    margin-left: 6px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    #header a.stooge strong {
+        background-image: url('kpmg-168-66.png');
+    }
+}
+
+#header ul {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    overflow: hidden;
+    background: #333;
+    color: #fff;
+}
+
+#header ul li {
+    /*width: 50%;*/
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#header ul li a {
+    display: block;
+    padding: 12px 20px;
+}
+
+#header ul li a:focus,
+#header ul li a:hover,
+.current-menu-item a {
+    background: #222;
+}
+
+h2, h3, h4 {
+    font-weight: normal;
+    margin: 0;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.punctuation {
+    display: inline-block;
+    margin-left: -20px;
+    width: 20px;
+    float: left;
+    text-align: right;
+}
+
+.programme h2,
+.past-events h2,
+.people h3 {
+    padding: 36px 20px 12px;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 24px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.programme a,
+.past-events a {
+    display: block;
+    color: inherit;
+    padding: 18px 20px;
+    text-decoration: none;
+    border-bottom: 1px dotted #ccc;
+    overflow: hidden;
+}
+
+.programme img,
+.past-events img {
+    float:right;
+    margin: -18px -20px -18px 20px;
+    max-width: 30%;
+    height: auto;
+}
+
+.programme a:hover, .past-events a:hover {
+    background: #f6f6f6;
+}
+
+.programme p, .past-events p{
+    list-style: none;
+    margin: 6px 0 0;
+}
+
+#main {
+    padding: 36px 20px 18px;
+}
+
+#main p {
+    max-width: 680px;
+}
+
+#main img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* special styles for debate events, with speakers for and against a motion */
+
+.people .for, .people .against {
+    margin: 0 -20px;
+    overflow: hidden;
+}
+
+/*
+.people h3 {
+    border-top: 1px dotted #ccc;
+}
+*/
+
+.people h4 {
+    padding: 18px 20px 12px;
+    font-size: 18px;
+}
+
+.people p {
+    font-size: 14px;
+    padding: 0 20px;
+    margin: 0;
+}
+
+.people {
+    margin-bottom: 36px;
+}
+
+/* slider */
+
+#tumescence {
+    margin-top: 36px;
+    margin-bottom: 24px;
+}
+
+#tumescence li {
+    margin: 0;
+}
+
+#tumescence li a {
+    display:block;
+}
+
+#tumescence img {
+    max-width: 100%;
+    height:auto;
+}
+
+#tumescence .metadata {
+    font-size: 18px;
+    text-shadow: -2px -2px 6px #111,
+	-2px 2px 6px #111,
+	2px -2px 6px #111,
+        2px 2px 6px #111;
+    position: absolute;
+    padding: 18px 20px;
+    bottom:0;
+    left:0;
+    color: #fff;
+}
+
+#tumescence .metadata h3 {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+#tumescence .metadata p {
+    display: none;
+}
+
+#tumescence .bjqs-markers li {
+    display: inline;
+}
+
+#tumescence .bjqs-markers {
+display: block;
+}
+#tumescence .bjqs-markers a {
+display: inline-block;
+width: 8px;
+height: 8px;
+text-indent: 100%;
+overflow: hidden;
+background: #eee;
+border-radius: 14px;
+border: 10px solid #fff;
+margin-top: 6px;
+}
+#tumescence .bjqs-markers .active-marker a,
+#tumescence .bjqs-markers a:hover {
+background: #ccc;
+}
+
+#tumescence .credit {
+position: absolute;
+bottom: 0;
+right: 10px;
+font-size: 10px;
+color:#ccc;
+display:inline-block;
+}
+#tumescence .credit a {
+color: inherit;
+text-decoration: none;
+padding:0 10px;
+}
+#tumescence .credit a:hover {
+background: #000;
+}
+.bjqs-controls a {
+color: #fff;
+text-decoration:none;
+padding: 0 20px 6px;
+display: block;
+line-height: 48px;
+}
+.bjqs-controls a:hover {
+background: #000;
+}
+.bjqs-controls {
+font-size: 48px;
+}
+
+#footer {
+font-size: 10px;
+clear: both;
+margin: 36px 0 0;
+padding: 20px;
+color: #aaa;
+border-top: 1px dotted #ccc;
+}
+
+#footer a {
+color: inherit;
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-gb">
+<head>
+<meta charset="utf-8" />
+
+<title>{%if event %}{{ event.name }} – {% endif %}The York Union</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+{% load staticfiles %}
+
+<link rel="stylesheet" href="{% static "base.css" %}" />
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="{% static "desktop.css" %}" />
+<![endif]-->
+<link rel="stylesheet" href="{% static "desktop.css" %}" media="screen and (min-width : 740px)" />
+
+</head>
+<body>
+
+<div id="header">
+
+<h1><a href="/">The <b><i>York</i> Union</b></a></h1> <!-- semantically meaningless elements (i, b) have no semantic meaning, which is fine -->
+
+<p>Est. 2013</p>
+<a href="http://www.kpmgcareers.co.uk/" class="stooge">Proudly sponsored by <strong>KPMG</strong></a>
+    
+<ul><li><a href="/">Home</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/press">Press</a></li>
+<!-- <li><a href="http://yorkunion.co.uk/photos">Photos</a></li> -->
+<li><a href="https://www.facebook.com/TheYorkUnion">Facebook</a></li>
+<li><a href="https://twitter.com/YorkUnion">Twitter</a></li>
+</ul>
+
+</div>

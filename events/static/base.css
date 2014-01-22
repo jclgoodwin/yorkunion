@@ -163,6 +163,19 @@ h3 {
     text-align: right;
 }
 
+.programme ol,
+.past-events ol {
+    margin: 0;
+    padding: 0;
+}
+
+.programme li,
+.past-events li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .programme h2,
 .past-events h2,
 .people h3 {

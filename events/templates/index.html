@@ -6,9 +6,9 @@
 <div class="programme">
     {% if future_events_list %}
     <h2>Programme</h2>
-    <ol class="h-event" itemscope itemtype="http://data-vocabulary.org/Event">
+    <ol>
         {% for event in future_events_list %}
-        <li>
+        <li class="h-event" itemscope itemtype="http://data-vocabulary.org/Event">
             <a href="{{ event.slug }}" itemprop="url">
                 <h3 class="p-name" itemprop="summary">{{ event.name }}</h3>
                 <p><time class="dt-start" itemprop="startDate" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}</time></p>
@@ -22,9 +22,9 @@
 <div class="past-events">
     {% if past_events_list %}
     <h2>Past events</h2>
-    <ol class="h-event" itemscope itemtype="http://data-vocabulary.org/Event">
+    <ol>
         {% for event in past_events_list %}
-        <li>
+        <li class="h-event" itemscope itemtype="http://data-vocabulary.org/Event">
             <a href="{{ event.slug }}" itemprop="url">
                 <h3 class="p-name" itemprop="summary">{{ event.name }}</h3>
                 <p><time class="dt-start" itemprop="startDate" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}</time></p>

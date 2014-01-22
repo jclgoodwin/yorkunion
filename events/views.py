@@ -9,7 +9,7 @@ from django.views import generic
 from events.models import Event
 
 def index(request):
-    forthcoming_events_list = Event.objects.all().filter(when__gte=datetime.date.today()).order_by('-when')
+    forthcoming_events_list = Event.objects.all().filter(when__gte=datetime.date.today()).order_by('when')
     past_events_list = Event.objects.all().filter(when__lt=datetime.date.today()).order_by('-when')
     context = {
     		'future_events_list': forthcoming_events_list,

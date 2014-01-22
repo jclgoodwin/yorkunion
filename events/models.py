@@ -25,6 +25,7 @@ class Event(models.Model):
     eventbrite_event_id = models.BigIntegerField(null=True, blank=True)
     blurb = models.TextField(null=True, blank=True)
     speakers = models.OneToOneField(Person, null=True, blank=True)
-    
+    blurb_secondary = models.TextField(null=True, blank=True)
+
     def __unicode__(self):
         return self.name

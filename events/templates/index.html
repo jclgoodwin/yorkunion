@@ -10,6 +10,7 @@
     <a class="h-event" href="{{ event.slug }}">
         <h3 class="p-name">{{ event.name }}</h3>
         <p><time class="dt-start" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}</time></p>
+    </a>
     {% endfor %}
     {% endif %}
 </div>
@@ -18,8 +19,9 @@
     {% if past_events_list %}
     <h2>Past events</h2>
     {% for event in past_events_list %}
-    <a href="{{ event.slug }}">
-        <h3>{{ event.name }}</h3>
+    <a class="h-event" href="{{ event.slug }}">
+        <h3 class="p-name">{{ event.name }}</h3>
+        <p><time class="dt-start" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}</time></p>
     </a>
     {% endfor %}
     {% endif %}

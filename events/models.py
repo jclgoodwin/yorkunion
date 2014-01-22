@@ -21,8 +21,8 @@ class Event(models.Model):
     slug = models.SlugField(db_index=False)
     when = models.DateTimeField()
     location = models.ForeignKey(Location, null=True, blank=True)
-    facebook_event_id = models.IntegerField(null=True, blank=True)
-    eventbrite_event_id = models.IntegerField(null=True, blank=True)
+    facebook_event_id = models.BigIntegerField(null=True, blank=True)
+    eventbrite_event_id = models.BigIntegerField(null=True, blank=True)
     blurb = models.TextField(null=True, blank=True)
     speakers = models.OneToOneField(Person, null=True, blank=True)
     

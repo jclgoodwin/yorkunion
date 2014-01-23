@@ -259,7 +259,7 @@ h3 {
 }
 
 #map, #tickets {
-    margin: 0 36px;
+    margin: 36px 0;
 }
 
 /* slider */

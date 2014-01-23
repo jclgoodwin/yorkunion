@@ -25,12 +25,24 @@
 
 {% if event.for_the_motion and event.against_the_motion %}
 
+<div class="people">
+	<div class="for">
 	{% for speaker in event.for_the_motion.all %}
-
-		{{ speaker.name }}
-
+		<div class="person">
+			<h4>{{ speaker.name }}</h4>
+			{{ speaker.biography | linebreaks }}
+		</div>
 	{% endfor %}
-
+	</div>
+	<div class="against">
+	{% for speaker in event.against_the_motion.all %}
+		<div class="person">
+			<h4>{{ speaker.name }}</h4>
+			{{ speaker.biography | linebreaks }}
+		</div>
+	{% endfor %}
+	</div>
+</div>
 {% endif %}
 
 {% if event.blurb_secondary %}

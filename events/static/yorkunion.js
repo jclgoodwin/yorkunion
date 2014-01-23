@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    if ($('#tumescence')) {
+    if ($('#tumescence').length) {
         $('#tumescence').bjqs({
             height       : 480,
             width        : 1000,
@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
             prevtext     : '&lsaquo;',
         });
     }
-    else if ($('.p-location')) {
+    else if ($('.p-location').length) {
         var coordinates = [$('.p-latitude').attr('value'),$('.p-longitude').attr('value')];
         var map = L.map('map').setView(coordinates, 16);
         L.tileLayer('http://www.york.ac.uk/about/maps/campus/data/tiles/{z}/{x}/{y}.png', {

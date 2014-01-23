@@ -27,6 +27,7 @@
 
 <div class="people">
 	<div class="for">
+	<h3>For the motion</h3>
 	{% for speaker in event.for_the_motion.all %}
 		<div class="person">
 			<h4>{{ speaker.name }}</h4>
@@ -35,6 +36,7 @@
 	{% endfor %}
 	</div>
 	<div class="against">
+	<h3>Against the motion</h3>
 	{% for speaker in event.against_the_motion.all %}
 		<div class="person">
 			<h4>{{ speaker.name }}</h4>

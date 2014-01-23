@@ -1,6 +1,21 @@
 {% include "header.html" %}
 
 <div id="tumescence">
+    {% if future_events_list %}
+    <ol class="bjqs">
+        {% for event in future_events_list %}
+        <li>
+            <a href="{{ event.slug }}">
+                <img width="1000" height="480" src="#" alt="" />
+                <div class="metadata">
+                    <h3>{{ event.name }}</h3>
+                    <p><time datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}</time></p>
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ol>
+    {% endif %}
 </div>
 
 <div class="programme">
@@ -8,12 +23,7 @@
     <h2>Programme</h2>
     <ol>
         {% for event in future_events_list %}
-        <li class="h-event" itemscope itemtype="http://data-vocabulary.org/Event">
-            <a href="{{ event.slug }}" itemprop="url">
-                <h3 class="p-name" itemprop="summary">{{ event.name }}</h3>
-                <p><time class="dt-start" itemprop="startDate" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}</time></p>
-            </a>
-        </li>
+            {% include "event-list-item.html" %}
         {% endfor %}
     </ol>
     {% endif %}
@@ -24,12 +34,7 @@
     <h2>Past events</h2>
     <ol>
         {% for event in past_events_list %}
-        <li class="h-event" itemscope itemtype="http://data-vocabulary.org/Event">
-            <a href="{{ event.slug }}" itemprop="url">
-                <h3 class="p-name" itemprop="summary">{{ event.name }}</h3>
-                <p><time class="dt-start" itemprop="startDate" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}</time></p>
-            </a>
-        </li>
+            {% include "event-list-item.html" %}
         {% endfor %}
     </ol>
     {% endif %}

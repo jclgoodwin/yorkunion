@@ -2,6 +2,15 @@ from django.db import models
 from geoposition.fields import GeopositionField
 
 
+class PressCutting(models.model):
+    name = models.CharField(max_length=300)
+    author = models.CharField(max_length=200, null=True, blank=True)
+    url = models.URLField()
+    publication = models.CharField(max_length=200)
+
+    def __unicode__(self):
+        return self.name, '[' + self.publication + ']'
+
 class Location(models.Model):
     name = models.CharField(max_length=200)
     position = GeopositionField()

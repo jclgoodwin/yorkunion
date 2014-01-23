@@ -8,7 +8,7 @@
 <p>
 	On <time class="dt-start" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}
 {% if event.location %}
-	at {{ event.when | date:"P" }]</time>
+	at {{ event.when | date:"g.i a" }]</time>
 	in
 	<span class="p-location">
 		{{ event.location }}

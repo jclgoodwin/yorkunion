@@ -55,7 +55,7 @@ a.stooge {
     margin-bottom: 36px;
 }
 
-#tickets {
+#tickets iframe {
     width: 50%;
     margin-right: 20px;
     float: left;

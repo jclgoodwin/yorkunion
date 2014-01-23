@@ -31,15 +31,11 @@
 
 {% if event.eventbrite_event_id and event.location %}
 
-<div>
-
 <div id="tickets">
 
-	<iframe src="http://www.eventbrite.com/tickets-external?eid={{ event.eventbrite_event_id }}&amp;ref=etckt&amp;v=2" height="256" width="100%" scrolling="no"></iframe>
+	<iframe src="http://www.eventbrite.com/tickets-external?eid={{ event.eventbrite_event_id }}&amp;ref=etckt&amp;v=2" height="256" width="100%" frameborder="0" scrolling="auto"></iframe>
 
-</div>
-
-<div id="map"></div>
+	<div id="map"></div>
 
 </div>
 

@@ -25,7 +25,7 @@
 
 {% if event.for_the_motion and event.against_the_motion %}
 
-	{% for speaker in event.for_the_motion %}
+	{% for speaker in event.for_the_motion.all %}
 
 		{{ speaker.name }}
 

@@ -254,15 +254,22 @@ h3 {
     margin-bottom: 36px;
 }
 
+#map {
+    height: 300px;
+}
+
 /* slider */
 
 #tumescence {
+    margin: 0;
+    padding: 0;
     margin-top: 36px;
     margin-bottom: 24px;
 }
 
 #tumescence li {
     margin: 0;
+    padding: 0;
 }
 
 #tumescence li a {

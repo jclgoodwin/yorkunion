@@ -1,12 +1,12 @@
 {% include "header.html" %}
 
 <div id="tumescence">
-    {% if future_events_list %}
+    {% if events_for_slider %}
     <ol class="bjqs">
-        {% for event in future_events_list %}
+        {% for event in events_for_slider %}
         <li>
             <a href="{{ event.slug }}">
-                <img width="1000" height="480" src="#" alt="" />
+                <img width="1000" height="480" src="{{ event.image.url }}" alt="" />
                 <div class="metadata">
                     <h3>{{ event.name }}</h3>
                     <p><time datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}</time></p>

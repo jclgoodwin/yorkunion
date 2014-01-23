@@ -226,6 +226,10 @@ h3 {
     height: auto;
 }
 
+#main .metadata {
+    margin-bottom: 36px;
+}
+
 /* special styles for debate events, with speakers for and against a motion */
 
 .people .for, .people .against {

@@ -23,7 +23,7 @@
 
 {{ event.blurb | linebreaks }}
 
-{% if event.for_the_motion and event.against_the_motion %}
+{% if event.against_the_motion.first %}
 
 <div class="people">
 	<div class="for">

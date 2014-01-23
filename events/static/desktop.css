@@ -54,3 +54,9 @@ a.stooge {
 .past-events {
     margin-bottom: 36px;
 }
+
+#tickets {
+    width: 50%;
+    margin-right: 20px;
+    float: left;
+}

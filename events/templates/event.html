@@ -19,7 +19,6 @@
 	</time>
 {% endif %}
 </p>
-{% if event.location %}<div id="map"></div>{% endif %}
 {% endif %}
 
 {{ event.blurb | linebreaks }}
@@ -30,8 +29,16 @@
 
 {% endif %}
 
-{% if event.eventbrite_event_id %}
-<iframe src="http://www.eventbrite.com/tickets-external?eid={{ event.eventbrite_event_id }}&amp;ref=etckt&amp;v=2" height="256" width="100%" frameborder="0" marginwidth="5" marginheight="5" scrolling="auto"></iframe>
+{% if event.eventbrite_event_id and event.location %}
+
+<div id="tickets">
+
+	<iframe src="http://www.eventbrite.com/tickets-external?eid={{ event.eventbrite_event_id }}&amp;ref=etckt&amp;v=2" height="256" width="100%" frameborder="0" marginwidth="5" marginheight="5" scrolling="auto"></iframe>
+
+</div>
+
+<div id="map"></div>
+
 {% endif %}
 
 </div>

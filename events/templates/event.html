@@ -6,14 +6,17 @@
 
 {% if event.when %}
 <p>
-	On <time class="dt-start" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}</time>
+	On <time class="dt-start" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}
 {% if event.location %}
+	at {{ event.when | date:"p"}]</time>
 	in
 	<span class="p-location">
 		{{ event.location }}
 		<data class="p-longitude" value="{{ event.location.position.longitude }}"></data>
 		<data class="p-latitude" value="{{ event.location.position.latitude }}"></data>
 	</span>
+{% else %}
+	</time>
 {% endif %}
 </p>
 {% if event.location %}<div id="map"></div>{% endif %}

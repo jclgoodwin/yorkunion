@@ -33,7 +33,8 @@ class Event(models.Model):
     facebook_event_id = models.BigIntegerField(null=True, blank=True)
     eventbrite_event_id = models.BigIntegerField(null=True, blank=True)
     blurb = models.TextField(null=True, blank=True)
-    speakers = models.OneToOneField(Person, null=True, blank=True)
+    for_the_motion = models.ManyToManyField(Person, null=True, blank=True)
+    against_the_motion = models.ManyToManyField(Person, null=True, blank=True)
     blurb_secondary = models.TextField(null=True, blank=True)
 
     def __unicode__(self):

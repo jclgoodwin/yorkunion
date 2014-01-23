@@ -27,7 +27,19 @@
 	<script src="{% static "leaflet/leaflet.js" %}"></script>
 	<script src="{% static "jquery.js" %}"></script>
 	<script src="{% static "yorkunion.js" %}"></script>
+
+	<meta property="fb:page_id" content="1455504191340489" />
+	<link rel="canonical" href="http://yorkunion.co.uk/{{ event.slug }}" />
+	<meta property="og:title" content="{{ event.name }}" />
+	<meta property="og:description" content="{{ event.blurb|truncatewords:20 }}" />
+	<meta property="og:url" content="http://yorkunion.co.uk/{{ event.slug }}" />
+	{% if event.image %}<meta property="og:image" content="{{ event.image.url }"} />{% endif % }
+	<meta property="og:site_name" content="The York Union" />
+	<meta name="twitter:site" content="@YorkUnion" />
+	<meta name="twitter:card" content="summary" />
 {% endif %}
+
+
 
 </head>
 <body>

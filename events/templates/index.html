@@ -2,7 +2,7 @@
 
 <div id="tumescence">
     {% if events_for_slider %}
-    <ol class="bjqs">
+    <ul class="bjqs">
         {% for event in events_for_slider %}
         <li>
             <a href="{{ event.slug }}">
@@ -14,7 +14,7 @@
             </a>
         </li>
         {% endfor %}
-    </ol>
+    </ul>
     {% endif %}
 </div>
 

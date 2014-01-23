@@ -258,6 +258,10 @@ h3 {
     height: 256px;
 }
 
+#map, #tickets {
+    margin: 0 36px;
+}
+
 /* slider */
 
 #tumescence {

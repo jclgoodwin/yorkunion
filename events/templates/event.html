@@ -23,11 +23,23 @@
 
 {{ event.blurb | linebreaks }}
 
-{% if event.speakers %}
+{% if event.for_the_motion and event.against_the_motion %}
+
+	{% for speaker in event.for_the_motion %}
+
+		{{ speaker.name }}
+
+	{% endfor %}
 
 	{{ event.speakers }}
 
 {% endif %}
+
+{% if event.blurb_secondary %}
+
+	{{ event.blurb_secondary | linebreaks }}
+
+{% endif }
 
 {% if event.eventbrite_event_id and event.location %}
 

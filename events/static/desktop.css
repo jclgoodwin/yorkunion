@@ -60,3 +60,7 @@ a.stooge {
     margin-right: 20px;
     float: left;
 }
+
+#map {
+    margin-top: 0;
+}

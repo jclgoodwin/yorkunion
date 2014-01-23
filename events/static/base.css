@@ -227,7 +227,7 @@ h3 {
 }
 
 #main .metadata {
-    margin-bottom: 36px;
+    margin-bottom: 24px;
 }
 
 /* special styles for debate events, with speakers for and against a motion */
@@ -260,11 +260,12 @@ h3 {
 
 #tickets {
     overflow: hidden;
+    margin: 36px 0;
 }
 
 #map {
     height: 256px;
-    margin: 36px 0;
+    margin-top: 24px;
 }
 
 /* slider */

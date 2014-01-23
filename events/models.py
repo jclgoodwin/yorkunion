@@ -2,11 +2,12 @@ from django.db import models
 from geoposition.fields import GeopositionField
 
 
-class PressCutting(models.model):
+class PressCutting(models.Model):
     name = models.CharField(max_length=300)
     author = models.CharField(max_length=200, null=True, blank=True)
     url = models.URLField()
     publication = models.CharField(max_length=200)
+    when = models.DateTimeField(null=True, blank=True)
 
     def __unicode__(self):
         return self.name, '[' + self.publication + ']'

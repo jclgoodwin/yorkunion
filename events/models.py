@@ -30,7 +30,7 @@ class Event(models.Model):
     name = models.CharField(max_length=300)
     slug = models.SlugField(db_index=False)
     when = models.DateTimeField()
-    image = models.ImageField(null=True, blank=True, upload_to='/%Y')
+    image = models.ImageField(null=True, blank=True, upload_to='%Y')
     location = models.ForeignKey(Location, null=True, blank=True)
     facebook_event_id = models.BigIntegerField(null=True, blank=True)
     eventbrite_event_id = models.BigIntegerField(null=True, blank=True)

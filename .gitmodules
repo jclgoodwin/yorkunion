@@ -1,0 +1,3 @@
+[submodule "events/static/basic-jquery-slider"]
+	path = events/static/basic-jquery-slider
+	url = https://github.com/jcobb/basic-jquery-slider.git

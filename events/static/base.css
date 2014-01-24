@@ -21,6 +21,12 @@ a img {
    border: 0;
 }
 
+blockquote {
+    margin: 0;
+    padding-left: 1em;
+    border-left: 1px dotted #ccc;
+}
+
 li {
     margin: .5em auto;
 }
@@ -266,6 +272,10 @@ h3 {
 #map {
     height: 256px;
     margin-top: 24px;
+}
+
+.leaflet-popup-content {
+    text-transform: capitalize;
 }
 
 /* slider */

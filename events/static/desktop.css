@@ -68,7 +68,7 @@ a.stooge {
 .event-image {
     float: right;
     box-sizing: border-box;
-    padding: 0 0 0 20px;
-    margin: 0 0 0 20px;
+    padding-left: 20px;
+    margin-left: 20px;
     width: 50%;
 }

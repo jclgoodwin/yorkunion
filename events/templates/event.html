@@ -22,6 +22,8 @@
 </p>
 {% endif %}
 
+{% if event.image %}<img src="{{ event.image.url }}" alt="" width="500" height="240" class="event-image" />{% endif %}
+
 {{ event.blurb | linebreaks }}
 
 {% if event.against_the_motion.first.biography %}

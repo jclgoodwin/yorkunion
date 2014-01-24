@@ -64,3 +64,9 @@ a.stooge {
 #map {
     margin-top: 0;
 }
+
+.event-image {
+    float: right;
+    width: 50%;
+    margin-left: 20px;
+}

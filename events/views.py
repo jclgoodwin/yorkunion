@@ -13,7 +13,7 @@ def index(request):
 
     events_for_slider = Event.objects.all().filter(when__gte=event_expiry_time, image__isnull=False)
     forthcoming_events_list = Event.objects.all().filter(when__gte=event_expiry_time).order_by('when')
-    past_events_list = Event.objects.all().filter(when__lt=datetime.date.today()).order_by('-when')
+    past_events_list = Event.objects.all().filter(when__lt=event_expiry_time).order_by('-when')
     context = {
             'events_for_slider': events_for_slider,
     		'future_events_list': forthcoming_events_list,

@@ -69,7 +69,6 @@ a.stooge {
     float: right;
     box-sizing: border-box;
     padding-left: 20px;
-    margin-right: 0;
-    margin-left: 20px;
+    margin: 1em 0 1em 20px;
     width: 50%;
 }

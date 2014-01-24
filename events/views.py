@@ -34,4 +34,7 @@ class DetailView(generic.DetailView):
     template_name = 'event.html'
 
 def about(request):
-	return render(request, 'about.html')
+    return render(request, 'about.html')
+
+def press(request):
+    return render(request, 'press.html')

@@ -228,7 +228,7 @@ h3 {
 }
 
 #main .event-image {
-    margin: 24px 0;
+    margin: 24px 0 1em;
     max-width: 100%;
     height: auto;
 }

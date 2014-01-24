@@ -24,7 +24,7 @@
 
 {% if event.image %}<img src="{{ event.image.url }}" alt="" width="500" height="240" class="event-image" />{% endif %}
 
-{{ event.blurb | linebreaks }}
+{{ event.blurb | textile }}
 
 {% if event.against_the_motion.first.biography %}
 
@@ -34,7 +34,7 @@
 	{% for speaker in event.for_the_motion.all %}
 		<div class="person">
 			<h4>{{ speaker.name }}</h4>
-			{{ speaker.biography | linebreaks }}
+			{{ speaker.biography | textile }}
 		</div>
 	{% endfor %}
 	</div>
@@ -43,7 +43,7 @@
 	{% for speaker in event.against_the_motion.all %}
 		<div class="person">
 			<h4>{{ speaker.name }}</h4>
-			{{ speaker.biography | linebreaks }}
+			{{ speaker.biography | textile }}
 		</div>
 	{% endfor %}
 	</div>
@@ -52,7 +52,7 @@
 
 {% if event.blurb_secondary %}
 
-	{{ event.blurb_secondary | linebreaks }}
+	{{ event.blurb_secondary | textile }}
 
 {% endif %}
 

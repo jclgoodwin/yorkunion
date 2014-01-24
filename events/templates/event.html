@@ -5,6 +5,8 @@
 
 <h2 class="p-name">{{ event.name }}</h2>
 
+{% if event.image %}<img src="{{ event.image.url }}" alt="" width="500" height="240" class="event-image" />{% endif %}
+
 {% if event.when %}
 <p class="metadata">
 	On <time class="dt-start" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}
@@ -21,8 +23,6 @@
 {% endif %}
 </p>
 {% endif %}
-
-{% if event.image %}<img src="{{ event.image.url }}" alt="" width="500" height="240" class="event-image" />{% endif %}
 
 {{ event.blurb | textile }}
 

@@ -65,10 +65,11 @@ a.stooge {
     margin-top: 0;
 }
 
-.event-image {
+#main .event-image {
     float: right;
     box-sizing: border-box;
     padding-left: 20px;
+    margin-right: 0;
     margin-left: 20px;
     width: 50%;
 }

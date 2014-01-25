@@ -31,7 +31,7 @@
 	<meta property="fb:page_id" content="1455504191340489" />
 	<link rel="canonical" href="http://yorkunion.co.uk/{{ event.slug }}" />
 	<meta property="og:title" content="{{ event.name }}" />
-	<meta property="og:description" content="{{ event.blurb|textile|striptags|truncatewords:20 }}" />
+	<meta property="og:description" content="{{ event.blurb|truncatewords:20 }}" />
 	<meta property="og:url" content="http://yorkunion.co.uk/{{ event.slug }}" />
 	{% if event.image %}<meta property="og:image" content="http://yorkunion.co.uk{{ event.image.url }}" />{% endif %}
 	<meta property="og:site_name" content="The York Union" />

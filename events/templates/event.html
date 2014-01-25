@@ -16,8 +16,8 @@
 	<span class="p-location" itemprop="location">
 		{{ event.location }}
 		<span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
-			<data class="p-longitude" itemprop="longitude" value="{{ event.location.position.longitude }}"></data>
-			<data class="p-latitude" itemprop="latitiude" value="{{ event.location.position.latitude }}"></data>
+			<data class="p-longitude" value="{{ event.location.position.longitude }}"><meta itemprop="longitude" content="{{ event.location.position.longitude }}" /></data>
+			<data class="p-latitude" value="{{ event.location.position.latitude }}"><meta itemprop="latitiude" content="{{ event.location.position.latitude }}" /></data>
 		</span>
 	</span>
 {% else %}

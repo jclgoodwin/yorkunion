@@ -39,5 +39,8 @@ class Event(models.Model):
     against_the_motion = models.ManyToManyField(Person, null=True, blank=True, related_name='against')
     blurb_secondary = models.TextField(null=True, blank=True)
 
+    def get_absolute_url(self):
+        return "/%i" % self.slug
+
     def __unicode__(self):
         return self.name

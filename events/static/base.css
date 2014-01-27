@@ -63,9 +63,11 @@ li {
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+
     #header h1 a {
         background-image: url('yorkunionlogo-96-66.png');
     }
+
 }
 
 #header p {
@@ -119,6 +121,8 @@ li {
     }
 }
 
+/* horizontal navbar */
+
 #header ul {
     margin: 0;
     padding: 0;
@@ -160,6 +164,8 @@ h2 {
 h3 {
     font-size: 18px;
 }
+
+/* typographically correct hanging punctuation (not currently used) */
 
 .punctuation {
     display: inline-block;
@@ -210,11 +216,13 @@ h3 {
     height: auto;
 }
 
-.programme a:hover, .past-events a:hover {
+.programme a:hover,
+.past-events a:hover {
     background: #f6f6f6;
 }
 
-.programme p, .past-events p{
+.programme p,
+.past-events p{
     list-style: none;
     margin: 6px 0 0;
 }
@@ -333,65 +341,74 @@ h3 {
 }
 
 #tumescence .bjqs-markers {
-display: block;
+    display: block;
 }
+
 #tumescence .bjqs-markers a {
-display: inline-block;
-width: 8px;
-height: 8px;
-text-indent: 100%;
-overflow: hidden;
-background: #eee;
-border-radius: 14px;
-border: 10px solid #fff;
-margin-top: 6px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    text-indent: 100%;
+    overflow: hidden;
+    background: #eee;
+    border-radius: 14px;
+    border: 10px solid #fff;
+    margin-top: 6px;
 }
+
 #tumescence .bjqs-markers .active-marker a,
 #tumescence .bjqs-markers a:hover {
-background: #ccc;
+    background: #ccc;
 }
 
 #tumescence .credit {
-position: absolute;
-bottom: 0;
-right: 10px;
-font-size: 10px;
-color:#ccc;
-display:inline-block;
-}
-#tumescence .credit a {
-color: inherit;
-text-decoration: none;
-padding:0 10px;
-}
-#tumescence .credit a:hover {
-background: #000;
-}
-.bjqs-controls a {
-color: #fff;
-text-decoration:none;
-padding: 0 20px 6px;
-display: block;
-line-height: 48px;
-top: 50%;
-margin-top: -27px;
-}
-.bjqs-controls a:hover {
-background: #000;
-}
-.bjqs-controls {
-font-size: 48px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 10px;
+    color: #ccc;
+    display: inline-block;
 }
 
+#tumescence .credit a {
+    color: inherit;
+    text-decoration: none;
+    padding:0 10px;
+}
+
+#tumescence .credit a:hover {
+    background: #000;
+}
+
+.bjqs-controls a {
+    color: #fff;
+    text-decoration:none;
+    padding: 0 20px 6px;
+    display: block;
+    line-height: 48px;
+    top: 50% !important;
+    margin-top: -27px;
+}
+
+.bjqs-controls a:hover {
+    background: #000;
+}
+
+.bjqs-controls {
+    font-size: 48px;
+}
+
+/* there is no footer */
+
 #footer {
-font-size: 10px;
-clear: both;
-margin: 36px 0 0;
-padding: 20px;
-color: #aaa;
-border-top: 1px dotted #ccc;
+    font-size: 10px;
+    clear: both;
+    margin: 36px 0 0;
+    padding: 20px;
+    color: #aaa;
+    border-top: 1px dotted #ccc;
 }
 
 #footer a {
-color: inherit;
+    color: inherit;
 }

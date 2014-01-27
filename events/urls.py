@@ -8,7 +8,7 @@ from events import views
 # )
 
 sitemaps = {
-    'events': EventsSitemap
+    'events': views.EventsSitemap
 }
 
 urlpatterns = patterns('',

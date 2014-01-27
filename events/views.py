@@ -43,12 +43,12 @@ def press(request):
 
 class EventsSitemap(Sitemap):
     def changefreq(self, item):
-        event_expiry_time = datetime.datetime.now() + datetime.timedelta(days=5)
+        event_expiry_time = datetime.datetime.now() - datetime.timedelta(days=5)
 
-        if item.when < event_expiry_time:
-            return 'daily'
-        else:
+        if item.when > event_expiry_time:
             return 'monthly'
+        else:
+            return 'daily'
 
     priority = 0.5
 

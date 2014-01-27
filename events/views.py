@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import datetime
 
+from django.contrib.sitemaps import Sitemap
+
 # from django.shortcuts import get_object_or_404, render
 # from django.http import HttpResponseRedirect
 # from django.core.urlresolvers import reverse
@@ -38,3 +40,19 @@ def about(request):
 
 def press(request):
     return render(request, 'press.html')
+
+
+class EventsSitemap(Sitemap):
+    def changefreq(item):
+        event_expiry_time = datetime.datetime.now() + datetime.timedelta(days=5)
+
+        if item.when >= event_expiry_time:
+            return 'daily'
+        else:
+            return 'monthly'
+
+    priority = 0.5
+
+    def items(self):
+        return Event.objects.all()
+

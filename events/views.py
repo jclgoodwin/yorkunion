@@ -42,7 +42,7 @@ def press(request):
     return render(request, 'press.html')
 
 class EventsSitemap(Sitemap):
-    def changefreq(item):
+    def changefreq(self, item):
         event_expiry_time = datetime.datetime.now() + datetime.timedelta(days=5)
 
         if item.when >= event_expiry_time:

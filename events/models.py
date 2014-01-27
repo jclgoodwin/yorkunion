@@ -40,7 +40,7 @@ class Event(models.Model):
     blurb_secondary = models.TextField(null=True, blank=True)
 
     def get_absolute_url(self):
-        return "/%i" % self.slug
+        return "/%s" % self.slug
 
     def __unicode__(self):
         return self.name

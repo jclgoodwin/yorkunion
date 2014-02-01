@@ -28,8 +28,10 @@ class Person(models.Model):
 
 class Event(models.Model):
     name = models.CharField(max_length=300)
+    subtitle = models.CharField(max_length=300, null=True, blank=True)
     slug = models.SlugField(db_index=False)
-    when = models.DateTimeField()
+    when = models.DateTimeField(null=True, blank=True)
+    last_modified = models.DateTimeField(auto_now=True)
     image = models.ImageField(null=True, blank=True, upload_to='%Y')
     location = models.ForeignKey(Location, null=True, blank=True)
     facebook_event_id = models.BigIntegerField(null=True, blank=True)

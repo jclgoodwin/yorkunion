@@ -10,6 +10,7 @@ from events import views
 
 sitemaps = {
     'events': views.EventsSitemap
+    'static': views.StaticViewSitemap
 }
 
 urlpatterns = patterns('',

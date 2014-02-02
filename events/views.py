@@ -5,13 +5,13 @@ from django.contrib.sitemaps import Sitemap
 
 # from django.shortcuts import get_object_or_404, render
 # from django.http import HttpResponseRedirect
-# from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse
 from django.views import generic
 
 from events.models import Event
 
 def index(request):
-    event_expiry_time = datetime.datetime.now() + datetime.timedelta(minutes=10) # events become "past events" 30 minutes after the start time
+    event_expiry_time = datetime.datetime.now() + datetime.timedelta(minutes=30) # events become "past events" 30 minutes after the start time
 
     events_for_slider = Event.objects.all().filter(when__gte=event_expiry_time, image__isnull=False)
     forthcoming_events_list = Event.objects.all().filter(when__gte=event_expiry_time).order_by('when')
@@ -22,14 +22,6 @@ def index(request):
     		'past_events_list': past_events_list
     	}
     return render(request, 'index.html', context)
-
-# class IndexView(generic.ListView):
-#     template_name = 'polls/index.html'
-#     context_object_name = 'latest_poll_list'
-
-#     def get_queryset(self):
-#         """Return the last five published polls."""
-#         return Poll.objects.order_by('-pub_date')[:5]
 
 class DetailView(generic.DetailView):
     model = Event
@@ -43,15 +35,25 @@ def press(request):
 
 class EventsSitemap(Sitemap):
     def changefreq(self, item):
-        event_expiry_time = datetime.datetime.now() - datetime.timedelta(days=5)
-
-        if item.when < event_expiry_time:
-            return 'monthly'
-        else:
+        if item.when + datetime.timedelta(days=5) > datetime.datetime.now():
             return 'daily'
+        else:
+            return 'monthly'
 
     priority = 0.5
 
     def items(self):
         return Event.objects.all()
 
+    def lastmod(self, item):
+        return item.last_modified
+
+class StaticViewSitemap(Sitemap):
+    priority = 0.5
+    changefreq = 'daily'
+
+    def items(self):
+        return ['index', 'about', 'press']
+
+    def location(self, item):
+        return reverse(item)

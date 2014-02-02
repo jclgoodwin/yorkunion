@@ -41,6 +41,9 @@ class Event(models.Model):
     against_the_motion = models.ManyToManyField(Person, null=True, blank=True, related_name='against')
     blurb_secondary = models.TextField(null=True, blank=True)
 
+    def has_finished(self):
+        return self.when + datetime.timedelta(minutes=30) <= datetime.datetime.now()
+
     def get_absolute_url(self):
         return "/%s" % self.slug
 

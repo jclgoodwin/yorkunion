@@ -9,8 +9,8 @@ from events import views
 # )
 
 sitemaps = {
-    'events': views.EventsSitemap
-    'static': views.StaticViewSitemap
+    'events': views.EventsSitemap,
+    'static': views.StaticViewSitemap,
 }
 
 urlpatterns = patterns('',

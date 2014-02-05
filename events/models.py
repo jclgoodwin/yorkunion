@@ -1,5 +1,6 @@
 from django.db import models
 from geoposition.fields import GeopositionField
+import datetime
 
 
 class PressCutting(models.Model):
@@ -42,7 +43,7 @@ class Event(models.Model):
     blurb_secondary = models.TextField(blank=True)
 
     def has_multiple_speakers(self):
-        return (4 == self.for_the_motion.count() == self.against_the_motion.count())
+        return self.for_the_motion.count() > 0 and self.against_the_motion.count() > 0
 
     def is_finished(self):
         return self.when + datetime.timedelta(minutes=30) <= datetime.datetime.now()

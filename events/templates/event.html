@@ -10,7 +10,7 @@
 {% if event.when %}
 <p class="metadata">
 	<time class="dt-start" itemprop="startDate" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}
-{% if not event.has_happened and event.location %}
+{% if not event.is_finished and event.location %}
 	at {{ event.when | date:"H:i" }}</time>
 	in
 	<span class="p-location" itemprop="location">
@@ -28,7 +28,7 @@
 
 {{ event.blurb | textile }}
 
-{% if event.for_the_motion and event.against_the_motion %}
+{% if event.has_multiple_speakers %}
 
 <div class="people">
 	<div class="for">
@@ -58,7 +58,7 @@
 
 {% endif %}
 
-{% if not event.has_finished and event.eventbrite_event_id and event.location %}
+{% if not event.is_finished and event.eventbrite_event_id and event.location %}
 
 <div id="tickets">
 

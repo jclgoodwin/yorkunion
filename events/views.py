@@ -18,9 +18,9 @@ def index(request):
     past_events_list = Event.objects.all().filter(when__lt=event_expiry_time).order_by('-when')
     context = {
             'events_for_slider': events_for_slider,
-    		'future_events_list': forthcoming_events_list,
-    		'past_events_list': past_events_list
-    	}
+            'future_events_list': forthcoming_events_list,
+            'past_events_list': past_events_list
+        }
     return render(request, 'index.html', context)
 
 class DetailView(generic.DetailView):

@@ -8,26 +8,26 @@
 {% if event.image %}<img src="{{ event.image.url }}" alt="" width="500" height="240" class="event-image" itemprop="photo" />{% endif %}
 
 <p class="metadata">
-	{% if event.when %}
-		<time class="dt-start" itemprop="startDate" datetime="{{ event.when|date:"c" }}">
-			{{ event.when | date:"l jS F Y" }}
-			{% if not event.is_finished and event.location %}
-				at {{ event.when | date:"H:i" }}
-			{% endif %}
-		</time>
-	{% endif }
+    {% if event.when %}
+        <time class="dt-start" itemprop="startDate" datetime="{{ event.when|date:"c" }}">
+            {{ event.when | date:"l jS F Y" }}
+            {% if not event.is_finished and event.location %}
+                at {{ event.when | date:"H:i" }}
+            {% endif %}
+        </time>
+    {% endif }
 
-	{% if event.location %}
-		<span class="p-location" itemprop="location">
-			{% if not event.is_finished %}
-				{{ event.location }}
-			{% endif %}
-			<span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
-				<data class="p-longitude" value="{{ event.location.position.longitude }}"><meta itemprop="longitude" content="{{ event.location.position.longitude }}" /></data>
-				<data class="p-latitude" value="{{ event.location.position.latitude }}"><meta itemprop="latitiude" content="{{ event.location.position.latitude }}" /></data>
-			</span>
-		</span>
-	{% endif %}
+    {% if event.location %}
+        <span class="p-location" itemprop="location">
+            {% if not event.is_finished %}
+                {{ event.location }}
+            {% endif %}
+            <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
+                <data class="p-longitude" value="{{ event.location.position.longitude }}"><meta itemprop="longitude" content="{{ event.location.position.longitude }}" /></data>
+                <data class="p-latitude" value="{{ event.location.position.latitude }}"><meta itemprop="latitiude" content="{{ event.location.position.latitude }}" /></data>
+            </span>
+        </span>
+    {% endif %}
 </p>
 
 {{ event.blurb | textile }}
@@ -35,30 +35,30 @@
 {% if event.has_multiple_speakers %}
 
 <div class="people">
-	<div class="for">
-	<h3>For the motion</h3>
-	{% for speaker in event.for_the_motion.all %}
-		<div class="person">
-			<h4>{{ speaker.name }}</h4>
-			{{ speaker.biography | textile }}
-		</div>
-	{% endfor %}
-	</div>
-	<div class="against">
-	<h3>Against the motion</h3>
-	{% for speaker in event.against_the_motion.all %}
-		<div class="person">
-			<h4>{{ speaker.name }}</h4>
-			{{ speaker.biography | textile }}
-		</div>
-	{% endfor %}
-	</div>
+    <div class="for">
+    <h3>For the motion</h3>
+    {% for speaker in event.for_the_motion.all %}
+        <div class="person">
+            <h4>{{ speaker.name }}</h4>
+            {{ speaker.biography | textile }}
+        </div>
+    {% endfor %}
+    </div>
+    <div class="against">
+    <h3>Against the motion</h3>
+    {% for speaker in event.against_the_motion.all %}
+        <div class="person">
+            <h4>{{ speaker.name }}</h4>
+            {{ speaker.biography | textile }}
+        </div>
+    {% endfor %}
+    </div>
 </div>
 {% endif %}
 
 {% if event.blurb_secondary %}
 
-	{{ event.blurb_secondary | textile }}
+    {{ event.blurb_secondary | textile }}
 
 {% endif %}
 
@@ -66,9 +66,9 @@
 
 <div id="tickets">
 
-	<iframe src="http://www.eventbrite.com/tickets-external?eid={{ event.eventbrite_event_id }}&amp;ref=etckt&amp;v=2" height="256" width="100%" frameborder="0" scrolling="auto"></iframe>
+    <iframe src="http://www.eventbrite.com/tickets-external?eid={{ event.eventbrite_event_id }}&amp;ref=etckt&amp;v=2" height="256" width="100%" frameborder="0" scrolling="auto"></iframe>
 
-	<div id="map"></div>
+    <div id="map"></div>
 
 </div>
 

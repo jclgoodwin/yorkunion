@@ -101,14 +101,14 @@ li {
 #header a.stooge strong {
     font-weight: normal;
     display: inline-block;
-    width: 84px;
+    width: 82px;
     height: 33px;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
     background-size: 100%;
-    background-image: url('kpmg-84-33.png');
-    background-size: 84px 33px;
+    background-image: url('kpmg-82-33.png');
+    background-size: 82px 33px;
     background-repeat: no-repeat;
     vertical-align: bottom;
     margin-bottom: 6px;
@@ -117,7 +117,7 @@ li {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     #header a.stooge strong {
-        background-image: url('kpmg-168-66.png');
+        background-image: url('kpmg-164-66.png');
     }
 }
 

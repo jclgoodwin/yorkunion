@@ -13,7 +13,7 @@ from events.models import Event
 def index(request):
     event_expiry_time = datetime.datetime.now() + datetime.timedelta(minutes=30) # events become "past events" 30 minutes after the start time
 
-    events_for_slider = Event.objects.all().filter(when__gte=event_expiry_time).exclude(image='')
+    events_for_slider = Event.objects.all().filter(when__gte=event_expiry_time).exclude(image='').order_by('when')
     forthcoming_events_list = Event.objects.all().filter(when__gte=event_expiry_time).order_by('when')
     past_events_list = Event.objects.all().filter(when__lt=event_expiry_time).order_by('-when')
     context = {

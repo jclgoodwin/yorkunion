@@ -13,8 +13,8 @@ jQuery(document).ready(function($) {
             prevtext     : '&lsaquo;',
         });
     }
-    else if ($('.p-location').length) {
-        var coordinates = [$('meta[itemprop=latitude]').attr('content'),$('meta[itemprop=longitude]').attr('content')];
+    else if ($('#map').length) {
+        var coordinates = [$('[itemprop=latitude]').attr('content'),$('[itemprop=longitude]').attr('content')];
         var placeName = $('[itemprop=location] [itemprop=name]').text();
         var map = L.map('map', {
             maxBounds: [[53.916, -1.175], [54.008, -0.994]],

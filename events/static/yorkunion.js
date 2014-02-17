@@ -14,8 +14,8 @@ jQuery(document).ready(function($) {
         });
     }
     else if ($('.p-location').length) {
-        var coordinates = [$('.p-latitude').attr('value'),$('.p-longitude').attr('value')];
-        var placeName = $('.p-location').text();
+        var coordinates = [$('meta[itemprop=latitude]').attr('content'),$('meta[itemprop=longitude]').attr('content')];
+        var placeName = $('[itemprop=location] [itemprop=name]').text();
         var map = L.map('map', {
             maxBounds: [[53.916, -1.175], [54.008, -0.994]],
             center: coordinates,

@@ -1,15 +1,15 @@
 {% load markup %}
 {% include "header.html" %}
 
-<div id="main" class="h-event" itemscope itemtype="http://data-vocabulary.org/Event">
+<div id="main" itemscope itemtype="http://schema.org/Event">
 
-<h2 class="p-name" itemprop="summary">{{ event.name }}</h2>
+<h2 itemprop="name">{{ event.name }}</h2>
 
-{% if event.image %}<img src="{{ event.image.url }}" alt="" width="500" height="240" class="event-image" itemprop="photo" />{% endif %}
+{% if event.image %}<img itemprop="image" src="{{ event.image.url }}" alt="" width="500" height="240" class="event-image" />{% endif %}
 
 <p class="metadata">
     {% if event.when %}
-        <time class="dt-start" itemprop="startDate" datetime="{{ event.when|date:"c" }}">
+        <time itemprop="startDate" datetime="{{ event.when|date:"c" }}">
             {{ event.when | date:"l jS F Y" }}
             {% if not event.is_finished and event.location %}
                 at {{ event.when | date:"H:i" }}
@@ -18,13 +18,15 @@
     {% endif %}
 
     {% if event.location %}
-        <span class="p-location" itemprop="location">
+        <span itemprop="location" itemscope itemtype="http://schema.org/Place">
             {% if not event.is_finished %}
-                {{ event.location }}
+                <span itemprop="name">{{ event.location }}</span>
+            {% else %}
+                <meta itemprop="name" content="{{ event.location }}" />
             {% endif %}
-            <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
-                <data class="p-longitude" value="{{ event.location.position.longitude }}"><meta itemprop="longitude" content="{{ event.location.position.longitude }}" /></data>
-                <data class="p-latitude" value="{{ event.location.position.latitude }}"><meta itemprop="latitiude" content="{{ event.location.position.latitude }}" /></data>
+            <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                <meta itemprop="latitiude" content="{{ event.location.position.latitude }}" />
+                <meta itemprop="longitude" content="{{ event.location.position.longitude }}" />
             </span>
         </span>
     {% endif %}
@@ -38,19 +40,13 @@
     <div class="for">
     <h3>For the motion</h3>
     {% for speaker in event.for_the_motion.all %}
-        <div class="person">
-            <h4>{{ speaker.name }}</h4>
-            {{ speaker.biography | textile }}
-        </div>
+        {% include "attendee.html" %}
     {% endfor %}
     </div>
     <div class="against">
     <h3>Against the motion</h3>
     {% for speaker in event.against_the_motion.all %}
-        <div class="person">
-            <h4>{{ speaker.name }}</h4>
-            {{ speaker.biography | textile }}
-        </div>
+        {% include "attendee.html" %}
     {% endfor %}
     </div>
 </div>

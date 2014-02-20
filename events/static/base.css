@@ -126,6 +126,7 @@ li {
 #header ul {
     margin: 0;
     padding: 0;
+    clear: both;
     font-size: 14px;
     overflow: hidden;
     background: #333;
@@ -133,14 +134,14 @@ li {
 }
 
 #header ul li {
-    /*width: 50%;*/
-    float: left;
+    display: inline;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 #header ul li a {
+    float: left;
     display: block;
     padding: 12px 20px;
 }

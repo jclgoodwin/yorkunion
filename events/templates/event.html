@@ -16,10 +16,10 @@
             {% endif %}
         </time>
     {% endif %}
-
     {% if event.location %}
         <span itemprop="location" itemscope itemtype="http://schema.org/Place">
             {% if not event.is_finished %}
+                in
                 <span itemprop="name">{{ event.location }}</span>
             {% else %}
                 <meta itemprop="name" content="{{ event.location }}" />

@@ -34,7 +34,7 @@ def about(request):
 
 def press(request):
     context = {
-        'press_cuttings': PressCutting.objects.all().order_by('when')
+        'press_cuttings': PressCutting.objects.all().order_by('-when')
     }
     return render(request, 'press.html', context)
 

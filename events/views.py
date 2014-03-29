@@ -8,7 +8,7 @@ from django.contrib.sitemaps import Sitemap
 from django.core.urlresolvers import reverse
 from django.views import generic
 
-from events.models import Event
+from events.models import Event, PressCutting
 
 def index(request):
     event_expiry_time = datetime.datetime.now() + datetime.timedelta(minutes=30) # events become "past events" 30 minutes after the start time
@@ -16,11 +16,13 @@ def index(request):
     events_for_slider = Event.objects.all().filter(when__gte=event_expiry_time).exclude(image='').order_by('when')
     forthcoming_events_list = Event.objects.all().filter(when__gte=event_expiry_time).order_by('when')
     past_events_list = Event.objects.all().filter(when__lt=event_expiry_time).order_by('-when')
+
     context = {
-            'events_for_slider': events_for_slider,
-            'future_events_list': forthcoming_events_list,
-            'past_events_list': past_events_list
-        }
+        'events_for_slider':    events_for_slider,
+        'future_events_list':   forthcoming_events_list, 
+        'past_events_list':     past_events_list
+    }
+
     return render(request, 'index.html', context)
 
 class DetailView(generic.DetailView):
@@ -31,7 +33,10 @@ def about(request):
     return render(request, 'about.html')
 
 def press(request):
-    return render(request, 'press.html')
+    context = {
+        'press_cuttings': PressCutting.objects.all().order_by('when')
+    }
+    return render(request, 'press.html', context)
 
 class EventsSitemap(Sitemap):
     def changefreq(self, item):

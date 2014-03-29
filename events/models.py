@@ -3,31 +3,57 @@ from geoposition.fields import GeopositionField
 import datetime
 
 
-class PressCutting(models.Model):
-    name = models.CharField(max_length=300)
-    author = models.CharField(max_length=200, blank=True)
+class Link(models.Model):
+    """
+    A link to an web page, such as a SoundCloud or YouTube recording.
+
+    """
+    title = models.CharField(max_length=300)
     url = models.URLField()
-    publication = models.CharField(max_length=200)
-    when = models.DateTimeField(null=True, blank=True)
 
     def __unicode__(self):
-        return self.name, '[' + self.publication + ']'
+        return self.title + ' [' + self.publication + ']'
+
+class PressCutting(Link):
+    """
+    A link to an web page, usually a review or preview of a York Union event, displayed on the "Press" page.
+
+    """
+    author = models.CharField(max_length=200, blank=True)
+    publication = models.CharField(max_length=200)
+    when = models.DateField(null=True, blank=True)
+
 
 class Location(models.Model):
+    """
+    A location (usually a room at the University of York) where events are held.
+
+    """
     name = models.CharField(max_length=200)
     position = GeopositionField()
 
     def __unicode__(self):
         return self.name
 
+
 class Person(models.Model):
+    """
+    A person speaking at an event. Typically only used for events with
+    speakers "for the motion" and "against the motion".
+
+    """
     name = models.CharField(max_length=200)
     biography = models.TextField()
 
     def __unicode__(self):
         return self.name
 
+
 class Event(models.Model):
+    """
+    A single event, in the past or in the future.
+
+    """
     name = models.CharField(max_length=300)
     subtitle = models.CharField(max_length=300, blank=True)
     slug = models.SlugField(db_index=False)

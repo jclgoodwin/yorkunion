@@ -32,11 +32,11 @@
     {% endif %}
 
     <meta property="fb:page_id" content="1455504191340489" />
-    <link rel="canonical" href="http://yorkunion.co.uk/{{ event.slug }}" />
+    <link rel="canonical" href="{{ event.get_absolute_url }}" />
+    <meta property="og:url" content="{{ event.get_absolute_url }}" />
     <meta property="og:title" content="{{ event.name }}" />
     <meta property="og:description" content="{{ event.blurb|textile|striptags|truncatewords:20 }}" />
-    <meta property="og:url" content="http://yorkunion.co.uk/{{ event.slug }}" />
-    {% if event.image %}<meta property="og:image" content="http://yorkunion.co.uk{{ event.image.url }}" />{% endif %}
+    {% if event.image %}<meta property="og:image" content="{{ event.image.url }}" />{% endif %}
     <meta property="og:site_name" content="The York Union" />
     <meta name="twitter:site" content="@YorkUnion" />
     <meta name="twitter:card" content="summary" />
@@ -53,9 +53,9 @@
 <a href="http://www.kpmgcareers.co.uk/" class="stooge">Proudly sponsored by <strong>KPMG</strong></a>
     
 <ul>
-<li><a href="/">Home</a></li>
-<li><a href="/about">About</a></li>
-<li><a href="/press">Press</a></li>
+<li><a href="{% url "index" %}">Home</a></li>
+<li><a href="{% url "about" %}">About</a></li>
+<li><a href="{% url "press" %}">Press</a></li>
 <li><a href="https://www.facebook.com/TheYorkUnion">Facebook</a></li>
 <li><a href="https://twitter.com/YorkUnion">Twitter</a></li>
 </ul>

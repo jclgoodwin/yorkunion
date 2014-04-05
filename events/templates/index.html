@@ -5,7 +5,7 @@
     <ul class="bjqs">
         {% for event in events_for_slider %}
         <li>
-            <a href="{{ event.slug }}">
+            <a href="{{ event.get_absolute_url }}">
                 <img width="1000" height="480" src="{{ event.image.url }}" alt="" />
                 <div class="metadata">
                     <h3>{{ event.name }}</h3>

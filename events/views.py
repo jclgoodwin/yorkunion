@@ -1,14 +1,12 @@
-from django.shortcuts import render
 import datetime
 
+from django.shortcuts import render
 from django.contrib.sitemaps import Sitemap
-
-# from django.shortcuts import get_object_or_404, render
-# from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
 
 from events.models import Event, PressCutting
+
 
 def index(request):
     event_expiry_time = datetime.datetime.now() + datetime.timedelta(minutes=30) # events become "past events" 30 minutes after the start time
@@ -25,9 +23,11 @@ def index(request):
 
     return render(request, 'index.html', context)
 
+
 class DetailView(generic.DetailView):
     model = Event
     template_name = 'event.html'
+
 
 def about(request):
     return render(request, 'about.html')
@@ -37,6 +37,7 @@ def press(request):
         'press_cuttings': PressCutting.objects.all().order_by('-when')
     }
     return render(request, 'press.html', context)
+
 
 class EventsSitemap(Sitemap):
     def changefreq(self, item):
@@ -52,6 +53,7 @@ class EventsSitemap(Sitemap):
 
     def lastmod(self, item):
         return item.last_modified
+
 
 class StaticViewSitemap(Sitemap):
     priority = 0.5

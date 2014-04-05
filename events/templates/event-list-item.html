@@ -1,5 +1,5 @@
 <li itemscope itemtype="http://schema.org/Event">
-    <a itemprop="url" href="{{ event.slug }}">
+    <a itemprop="url" href="{{ event.get_absolute_url }}">
         <h3 itemprop="name">{{ event.name }}</h3>
         <p><time itemprop="startDate" datetime="{{ event.when|date:"c" }}">{{ event.when | date:"l jS F Y" }}</time></p>
         {% if event.location %}

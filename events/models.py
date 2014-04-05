@@ -14,6 +14,7 @@ class Link(models.Model):
     def __unicode__(self):
         return self.title + ' [' + self.publication + ']'
 
+
 class PressCutting(Link):
     """
     A link to an web page, usually a review or preview of a York Union event, displayed on the "Press" page.
@@ -75,7 +76,8 @@ class Event(models.Model):
         return self.when + datetime.timedelta(minutes=30) <= datetime.datetime.now()
 
     def get_absolute_url(self):
-        return "/%s" % self.slug
+        from django.core.urlresolvers import reverse
+        return reverse('event', args=(str(self.slug),))
 
     def __unicode__(self):
         return self.name

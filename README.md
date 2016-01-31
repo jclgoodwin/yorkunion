@@ -16,7 +16,7 @@ There are some dependencies. I ought to make a proper [requirements file](https:
         'south'
     )
 
-`geoposition` allows events to be associated with geographical coordinates (on the front end, the University of York's map tile server has been cheekily used). `django_markwhat` is useful for making HTML out of Textile- or Markdown-formatted text. `south` is not strictly necessary, and Django 2.7 will include the same functionality (database schema migrations, for when models are changed) built-in.
+`geoposition` allows events to be associated with geographical coordinates (on the front end, the University of York's map tile server has been cheekily used). `django_markwhat` is useful for making HTML out of Textile- or Markdown-formatted text. `south` is not strictly necessary, and Django 1.7 will include the same functionality (database schema migrations, for when models are changed) built-in.
 
 `yorkunion` is the main app but `events` contains most of the functionality: events (with associated locations and speakers) can be defined, as well as press cuttings. The templates attempt to support [microdata](https://support.google.com/webmasters/answer/164506). There were grand plans for an iCalendar feed, and to archive the results of votes on motions.
 
